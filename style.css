@@ -9,15 +9,18 @@ body {
 
 .container {
     border: 1px solid #e5e7eb;
-    padding: 15px;
+    padding: 25px 30px 25px 30px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    border-radius: 12px;
+    box-shadow: 2px 4px 16px #696666;
 }
 
-.container h1 {     /*heading*/
+.container h1 {              /*heading*/
+    font-size: 48px;
     margin-top: 0px;
-    color: #3882f6;
+    color: rgb(28, 171, 171);
     font-family: sans-serif;
 }
 
@@ -40,12 +43,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: rgb(28, 171, 171);
+}
+
+.currentResult {
+    flex-direction: column;
+    gap:10px;
 }
 
 .userInput {        /*the 3 images*/
     display: flex;
     padding: 10px;
-    gap: 5px;
+    gap: 15px;
 }
 
 .userInput .choiceImg {
@@ -56,6 +67,7 @@ body {
     flex: auto;
     cursor: pointer;
     border: 1px solid #e5e7eb;
+    border-radius: 8px;
 }
 
 img {
