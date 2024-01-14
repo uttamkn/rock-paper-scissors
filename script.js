@@ -1,3 +1,5 @@
+const userChoiceImg = document.querySelector('#userChoice')
+
 function computerChoice() {         //returns a string rock paper or scissors randomly
     let choice = Math.floor((Math.random())*3);
     switch(choice)
@@ -12,36 +14,36 @@ function computerChoice() {         //returns a string rock paper or scissors ra
 function evaluate(uChoice, cChoice) {
 
     if(uChoice == cChoice){
-        return "Its a tie";
+        return "It's a tie";
     }
     else {
         switch(uChoice) {
             case "rock": {
                 if(cChoice == "paper"){
-                    return "You lose!, I chose paper";
+                    return "You lose!, paper beats rock";
                 }
                 else if (cChoice == "scissors") {
-                    return "You win!, I chose scissors";
+                    return "You win!, rock beats scissors";
                 }
             }
             break;
             
             case "paper": {
                 if(cChoice == "scissors"){
-                    return "You lose!, I chose scissors";
+                    return "You lose!, scissors beats paper";
                 }
                 else if (cChoice == "rock") {
-                    return "You win!, I chose rock";
+                    return "You win!, paper beats rock";
                 }
             }
             break;
 
             case "scissors": {
                 if(cChoice == "rock"){
-                    return "You lose!, I chose rock";
+                    return "You lose!, rock beats scissors";
                 }
                 else if (cChoice == "paper") {
-                    return "You win!, I chose paper";
+                    return "You win!, scissors beats paper";
                 }
             }
             break;
@@ -54,15 +56,19 @@ function evaluate(uChoice, cChoice) {
 
 function displayResult() {
     let disp;
-    if(score >= 3) {
+    if(userScore > botScore) {
         disp = "Congrats!! you won :D"
     }
     else {
         disp = "Looks like you suck at rps too xD. Try again"
     }
-    console.log("Your score: " + (score) + "/5");
-    console.log(disp)
+
+    //incomplete
 }
+
+const curResult = document.querySelector('#currentResult');
+const UserScore = document.querySelector('#userScore');
+const BotScore = document.querySelector('#botScore');
 
 function game(userChoice) {
 
@@ -72,33 +78,37 @@ function game(userChoice) {
         i++;
         
         if(i==5){
-            console.log(result);
+            curResult.textContent = (result);
             displayResult();
             return;
         }
         else{
-            score++;
-            console.log(result);
+            userScore++;
+            curResult.textContent = (result);
         }
     }
     else if (result[4] == "l"){     //user lost
         i++;
 
         if(i==5){
-            console.log(result);
+            curResult.textContent = (result);
             displayResult();
             return;
         }
         else {
-            console.log(result);
+            botScore++;
+            curResult.textContent = (result);
         }
     }
     else if (result[1] == "t") {      //tie
-        console.log(result);
+        curResult.textContent = (result);
     }
     else {
-        console.error(result);        //error
+        cocurResult.textContent = (result);        //error
     }
+
+    UserScore.textContent="You - "+userScore;
+    BotScore.textContent="RNG bot - "+botScore;
     
 }
 
@@ -106,7 +116,8 @@ const rockImg = document.querySelector('#rock');
 const paperImg = document.querySelector('#paper');
 const scissorsImg = document.querySelector('#scissors');
 let i = 0;
-let score = 0;
+let userScore = 0;
+let botScore = 0;
 
 rockImg.addEventListener('click', function () {
     game(rockImg.id);
