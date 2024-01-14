@@ -9,11 +9,6 @@ function computerChoice() {         //returns a string rock paper or scissors ra
     }
 }
 
-function userChoice() {             //returns the users choice in lowercase (INCOMPLETE)
-
-    return choice.toLowerCase();
-}
-
 function evaluate(uChoice, cChoice) {
 
     if(uChoice == cChoice){
@@ -51,9 +46,78 @@ function evaluate(uChoice, cChoice) {
             }
             break;
 
-            default: return "Incorrect choice";
+            default: return "Error";
 
         }   
     }
 }
+
+function displayResult() {
+    let disp;
+    if(score >= 3) {
+        disp = "Congrats!! you won :D"
+    }
+    else {
+        disp = "Looks like you suck at rps too xD. Try again"
+    }
+    console.log("Your score: " + (score) + "/5");
+    console.log(disp)
+}
+
+function game(userChoice) {
+
+    result = evaluate(userChoice, computerChoice());
+    
+    if (result[4] == "w"){        //user won
+        i++;
+        
+        if(i==5){
+            console.log(result);
+            displayResult();
+            return;
+        }
+        else{
+            score++;
+            console.log(result);
+        }
+    }
+    else if (result[4] == "l"){     //user lost
+        i++;
+
+        if(i==5){
+            console.log(result);
+            displayResult();
+            return;
+        }
+        else {
+            console.log(result);
+        }
+    }
+    else if (result[1] == "t") {      //tie
+        console.log(result);
+    }
+    else {
+        console.error(result);        //error
+    }
+    
+}
+
+const rockImg = document.querySelector('#rock');
+const paperImg = document.querySelector('#paper');
+const scissorsImg = document.querySelector('#scissors');
+let i = 0;
+let score = 0;
+
+rockImg.addEventListener('click', function () {
+    game(rockImg.id);
+});
+
+paperImg.addEventListener('click', function () {
+    game(paperImg.id);
+});
+
+scissorsImg.addEventListener('click', function () {
+    game(scissorsImg.id);
+});
+
 
