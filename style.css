@@ -45,14 +45,17 @@ body {
 .userInput {        /*the 3 images*/
     display: flex;
     padding: 10px;
-    background-color: #e5e7eb;
+    gap: 5px;
 }
 
 .userInput .choiceImg {
+    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex: auto;
+    cursor: pointer;
+    border: 1px solid #e5e7eb;
 }
 
 img {
