@@ -1,4 +1,4 @@
-function computerChoice() {
+function computerChoice() {         //returns a string rock paper or scissors randomly
     let choice = Math.floor((Math.random())*3);
     switch(choice)
     {
@@ -9,8 +9,8 @@ function computerChoice() {
     }
 }
 
-function userChoice() {
-    let choice = prompt("Enter your choice! Rock, Paper or Scissors?");
+function userChoice() {             //returns the users choice in lowercase (INCOMPLETE)
+
     return choice.toLowerCase();
 }
 
@@ -57,39 +57,3 @@ function evaluate(uChoice, cChoice) {
     }
 }
 
-function game() {
-
-    let score = 0;
-    let i = 0;
-    while(i < 5){
-
-        result = evaluate(userChoice(), computerChoice());
-
-        if (result[4] == "w"){
-            score++;
-            console.log(result);
-            i++;
-        }
-        else if (result[4] == "l"){
-            console.log(result);
-            i++;
-        }
-        else if (result[1] == "t") {
-            console.log(result);
-        }
-        else {
-            console.error(result);
-        }
-    }
-    let disp;
-    if(score >= 3) {
-        disp = "Congrats!! you won :D"
-    }
-    else {
-        disp = "Looks like you suck at rps too xD. Try again"
-    }
-    console.log("Your score: " + (score) + "/5");
-    console.log(disp)
-}
-
-game();
