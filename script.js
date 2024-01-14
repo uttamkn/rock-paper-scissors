@@ -88,7 +88,17 @@ function displayResult() {
         disp = "Looks like you suck at rps too xD. Try again"
     }
 
-    //incomplete
+    document.querySelector('#container').style.display = "none";
+
+    const res = document.createElement('div');
+    res.innerText=`${disp}\n\nFinal score:\n You - ${userScore} \nRNG bot - ${botScore}`;
+    res.style.cssText = 'color: #3882f6; padding: 15px; fontWeight: 400; border: 2px solid #3882f6;';
+    res.style.fontSize = '32px';
+    res.style.fontFamily = 'sans-serif';
+    res.style.borderRadius = '8px';
+
+    document.querySelector('body').appendChild(res);
+    // alert(`${disp}\nFinal score:\n You - ${userScore} \nRNG bot - ${botScore}`)
 }
 
 const curResult = document.querySelector('#currentResult');
@@ -123,28 +133,33 @@ function game(userChoice) {
     result = evaluate(userChoice, computerChoice());
     
     if (result[4] == "w"){        //user won
-        i++;
         
-        if(i==5){
+        
+        if(i>=5){
             curResult.textContent = (result);
             displayResult();
-            return;
         }
         else{
+            i++;
             userScore++;
+            if(i==5) {
+                displayResult();
+            }
             curResult.textContent = (result);
         }
     }
     else if (result[4] == "l"){     //user lost
-        i++;
 
-        if(i==5){
+        if(i>=5){
             curResult.textContent = (result);
             displayResult();
-            return;
         }
         else {
+            i++;
             botScore++;
+            if(i==5) {
+                displayResult();
+            }
             curResult.textContent = (result);
         }
     }
