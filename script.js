@@ -1,12 +1,37 @@
-const userChoiceImg = document.querySelector('#userChoice')
+const userChoiceImg = document.querySelector('#userChoice');
+const botChoiceImg = document.querySelector('#botChoice');
+
+const newXImg = document.createElement('img');
+
+newXImg.src='./img/fight.svg';
+newXImg.alt='VS';
+newXImg.width=100;
+
+const newImg = document.createElement('img');
+botChoiceImg.appendChild(newImg);
 
 function computerChoice() {         //returns a string rock paper or scissors randomly
     let choice = Math.floor((Math.random())*3);
     switch(choice)
     {
-        case 0: return "rock";
-        case 1: return "paper";
-        case 2: return "scissors";
+        case 0: {
+                    newImg.src='./img/rock.svg';
+                    newImg.alt='rock';
+                    newImg.width=100;
+                    return "rock";
+                }   
+        case 1: {
+                    newImg.src='./img/paper.svg';
+                    newImg.alt='paper';
+                    newImg.width=100;
+                    return "paper";
+                }
+        case 2: {
+                    newImg.src='./img/scissors.svg';
+                    newImg.alt='scissors';
+                    newImg.width=100;
+                    return "scissors";
+                }
         default: return -1;
     }
 }
@@ -70,7 +95,11 @@ const curResult = document.querySelector('#currentResult');
 const UserScore = document.querySelector('#userScore');
 const BotScore = document.querySelector('#botScore');
 
+const curChoice = document.querySelector('#currentChoice');
+
 function game(userChoice) {
+
+    curChoice.insertBefore(newXImg, botChoiceImg);      //adds X image
 
     result = evaluate(userChoice, computerChoice());
     
@@ -115,6 +144,7 @@ function game(userChoice) {
 const rockImg = document.querySelector('#rock');
 const paperImg = document.querySelector('#paper');
 const scissorsImg = document.querySelector('#scissors');
+
 let i = 0;
 let userScore = 0;
 let botScore = 0;
