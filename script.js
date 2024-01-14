@@ -96,6 +96,7 @@ function displayResult() {
     res.style.fontSize = '32px';
     res.style.fontFamily = 'sans-serif';
     res.style.borderRadius = '8px';
+    res.style.margin = 'auto';
 
     document.querySelector('body').appendChild(res);
     // alert(`${disp}\nFinal score:\n You - ${userScore} \nRNG bot - ${botScore}`)
