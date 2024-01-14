@@ -15,6 +15,7 @@ body {
     flex-wrap: wrap;
     border-radius: 12px;
     box-shadow: 2px 4px 16px #696666;
+    gap: 10px;
 }
 
 .container h1 {              /*heading*/
@@ -27,10 +28,14 @@ body {
 .currentChoice {           /*you chose: uchoice img       botchoice img: bot chose*/
     display: flex;
     padding: 10px;
+    justify-content: space-between;
 }
 
 .userChoice, .botChoice {
     display: flex;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .scoreDisplay {     /*your score:0   You lose    Bot score:1*/
