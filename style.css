@@ -1,13 +1,15 @@
 body {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     background-color: #1f2937;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: 0px;
 }
 
 .container {
+    margin: auto;
     border: 1px solid #e5e7eb;
     padding: 25px 30px 25px 30px;
     display: flex;
@@ -78,4 +80,10 @@ body {
 img {
     max-width: 100px;
     max-height: 100px;
+}
+
+a {
+    text-decoration: none;
+    color: #e5e7eb;
+    font-size: 24px;
 }
