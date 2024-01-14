@@ -1,0 +1,56 @@
+body {
+    height: 100vh;
+    display: flex;
+    background-color: #1f2937;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
+.container {
+    border: 1px solid #e5e7eb;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.container h1 {     /*heading*/
+    margin-top: 0px;
+    color: #3882f6;
+    font-family: sans-serif;
+}
+
+.currentChoice {           /*you chose: uchoice img       botchoice img: bot chose*/
+    display: flex;
+    padding: 10px;
+}
+
+.userChoice, .botChoice {
+    display: flex;
+}
+
+.scoreDisplay {     /*your score:0   You lose    Bot score:1*/
+    display: flex;
+    padding: 10px;
+}
+
+.currentScore, .currentResult {
+    flex: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userInput {        /*the 3 images*/
+    display: flex;
+    padding: 10px;
+    background-color: #e5e7eb;
+}
+
+.userInput .choiceImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: auto;
+}
