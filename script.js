@@ -96,10 +96,29 @@ const UserScore = document.querySelector('#userScore');
 const BotScore = document.querySelector('#botScore');
 
 const curChoice = document.querySelector('#currentChoice');
+const newUserImg = document.createElement('img');
+userChoiceImg.appendChild(newUserImg);
+
 
 function game(userChoice) {
 
-    curChoice.insertBefore(newXImg, botChoiceImg);      //adds X image
+    if(userChoice == 'rock') {
+        newUserImg.src='./img/rock.svg';
+        newUserImg.alt='rock';
+        newUserImg.width=100;
+    }
+    else if(userChoice == 'paper') {
+        newUserImg.src='./img/paper.svg';
+        newUserImg.alt='paper';
+        newUserImg.width=100;
+    }
+    else {
+        newUserImg.src='./img/scissors.svg';
+        newUserImg.alt='scissors';
+        newUserImg.width=100;
+    }
+
+    curChoice.insertBefore(newXImg, botChoiceImg);                  //adds X image
 
     result = evaluate(userChoice, computerChoice());
     
