@@ -91,15 +91,26 @@ function displayResult() {
     document.querySelector('#container').style.display = "none";
 
     const res = document.createElement('div');
-    res.innerText=`${disp}\n\nFinal score:\n You - ${userScore} \nRNG bot - ${botScore}`;
-    res.style.cssText = 'color: #3882f6; padding: 15px; fontWeight: 400; border: 2px solid #3882f6;';
-    res.style.fontSize = '32px';
-    res.style.fontFamily = 'sans-serif';
-    res.style.borderRadius = '8px';
-    res.style.margin = 'auto';
+    const resTxt = document.createElement('div');
+    const replayBtn = document.createElement('div');
+
+    resTxt.innerText=`${disp}\n\nFinal score:\n You - ${userScore} \nRNG bot - ${botScore}`;
+    res.classList.add('endScreen');
+
+    replayBtn.classList.add('endBtn');
+    reloadBtn(replayBtn);
+
+    res.appendChild(resTxt);
+    res.appendChild(replayBtn);
 
     document.querySelector('body').appendChild(res);
     // alert(`${disp}\nFinal score:\n You - ${userScore} \nRNG bot - ${botScore}`)
+}
+
+function reloadBtn(x) {                     //reloads the page when clicked
+    x.addEventListener('click', () => {
+        location.reload();
+    })
 }
 
 const curResult = document.querySelector('#currentResult');

@@ -87,3 +87,45 @@ a {
     color: #e5e7eb;
     font-size: 24px;
 }
+
+.endScreen {
+    color: rgb(28, 171, 171);
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 2px 4px 16px #e5e7eb;
+    margin: auto;
+    font-family: sans-serif;
+    font-size: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.endBtn {
+    background-image: url(./img/fight.svg);
+    background-position: center center;
+    background-size: 60px;
+    background-repeat: no-repeat;
+    border-radius: 80px;
+    border: 1px solid #eee;
+    min-width: 80px;
+    display: flex;
+    font-family: monospace;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    padding: 10px;
+    margin: auto;
+    min-height: 80px;
+    cursor: pointer;
+}
+
+.endBtn:hover {
+    background-color: rgb(103, 195, 192);
+    color: rgb(28, 171, 171);
+    box-shadow: 1px 2px 16px #eee;
+    background-image: url(./img/replay.svg);
+    
+}
